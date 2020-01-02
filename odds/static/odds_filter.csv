@@ -1,0 +1,38 @@
+475993c2-fc9f-4cbc-ae10-0a20c8b69b19,team,new york knicks
+475993c2-fc9f-4cbc-ae10-0a20c8b69b19,bet_type,ou
+475993c2-fc9f-4cbc-ae10-0a20c8b69b19,odd_type,game
+475993c2-fc9f-4cbc-ae10-0a20c8b69b19,sport,basketball
+eb979f7b-654f-4ceb-b56d-19b5ad7a5c57,team,detroit pistons
+eb979f7b-654f-4ceb-b56d-19b5ad7a5c57,bet_type,ou
+eb979f7b-654f-4ceb-b56d-19b5ad7a5c57,odd_type,game
+eb979f7b-654f-4ceb-b56d-19b5ad7a5c57,sport,basketball
+e4a721e6-833c-4858-b86d-eb3579324bd1,team,golden st warriors
+e4a721e6-833c-4858-b86d-eb3579324bd1,bet_type,ou
+e4a721e6-833c-4858-b86d-eb3579324bd1,odd_type,game
+e4a721e6-833c-4858-b86d-eb3579324bd1,player,steph curry
+e4a721e6-833c-4858-b86d-eb3579324bd1,sport,basketball
+052a6a8a-b15e-4cc9-9a19-6cd26c767d89,team,milwaukee bucks
+052a6a8a-b15e-4cc9-9a19-6cd26c767d89,bet_type,ou
+052a6a8a-b15e-4cc9-9a19-6cd26c767d89,odd_type,season
+052a6a8a-b15e-4cc9-9a19-6cd26c767d89,sport,basketball
+d4a03f44-b550-4586-ab7f-eafe67eca7aa,team,minnesota twolves
+d4a03f44-b550-4586-ab7f-eafe67eca7aa,bet_type,ou
+d4a03f44-b550-4586-ab7f-eafe67eca7aa,odd_type,game
+d4a03f44-b550-4586-ab7f-eafe67eca7aa,player,karl anthony towns
+d4a03f44-b550-4586-ab7f-eafe67eca7aa,sport,basketball
+461e3dc5-c747-4584-8120-fa907cc7954e,team,baltimore ravens
+461e3dc5-c747-4584-8120-fa907cc7954e,bet_type,prop
+461e3dc5-c747-4584-8120-fa907cc7954e,odd_type,playoffs
+461e3dc5-c747-4584-8120-fa907cc7954e,sport,football
+1797d940-ffb3-4bae-ade0-7d422337b0b1,team,philadelphia eagles
+1797d940-ffb3-4bae-ade0-7d422337b0b1,bet_type,ou
+1797d940-ffb3-4bae-ade0-7d422337b0b1,odd_type,game
+1797d940-ffb3-4bae-ade0-7d422337b0b1,sport,football
+ed8962bc-7f79-463f-90cc-e908c95c9a1f,team,new jersey devils
+ed8962bc-7f79-463f-90cc-e908c95c9a1f,bet_type,ou
+ed8962bc-7f79-463f-90cc-e908c95c9a1f,odd_type,season
+ed8962bc-7f79-463f-90cc-e908c95c9a1f,sport,hockey
+ba8ce24a-b960-4540-926b-6c49c50e4acd,sport,football
+ba8ce24a-b960-4540-926b-6c49c50e4acd,team,new england patriots
+ba8ce24a-b960-4540-926b-6c49c50e4acd,bet_type,line
+ba8ce24a-b960-4540-926b-6c49c50e4acd,odd_type,game
