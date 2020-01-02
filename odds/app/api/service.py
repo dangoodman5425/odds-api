@@ -27,3 +27,10 @@ def get_odds_filter_by(odds_uuid):
     :return: List of dictionary representation of each entry
     """
     return {'data': [x.to_dict() for x in OddsFilter.query.filter_by(odds_uuid=odds_uuid).all()]}
+
+
+def get_games_by(**kwargs):
+    """Retrieves entries from the `game` table based on filters
+    :return: List of dictionary representation of each entry
+    """
+    return {'data': [x.to_dict() for x in OddsFilter.query.filter_by(**kwargs).all()]}

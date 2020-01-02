@@ -3,8 +3,8 @@ from flask_restplus import Resource
 from webargs import fields
 from webargs.flaskparser import use_args
 
-from app.api.model import Odds, OddsFilter
-from app.api.service import get_odds_by, get_odds_filter_by
+from app.api.model import Odds, OddsFilter, Game
+from app.api.service import get_odds_by, get_odds_filter_by, get_games_by
 from app.api.support import json_response, create_entity, update_entity, create_entities
 from app.api.validation import CreateOddsSchema, UpdateOddsSchema, CreateOddsFilterSchema
 
@@ -67,10 +67,10 @@ class OddsDetails(Resource):
     @staticmethod
     @json_response
     def get(odds_uuid):
-        """Gets a listing for a given odds UUID (this should be made less janky in the future)
+        """Gets a odds for a given odds UUID (this should be made less janky in the future)
 
-        :param odds_uuid: Odds UUID corresponding to the listing
-        :return: JSON response containing the listing, and a status code
+        :param odds_uuid: Odds UUID corresponding to the odds
+        :return: JSON response containing the odds, and a status code
         """
         return get_odds_by(odds_uuid=odds_uuid)['data'][0], 200
 
@@ -107,3 +107,42 @@ class OddsFilterDetails(Resource):
     @json_response
     def post(self, odds_uuid):
         return create_entities([OddsFilter(odds_uuid=odds_uuid, **req) for req in request.get_json()])
+
+
+class Games(Resource):
+
+    game_filter_params = {
+        'away_team_id': fields.String(),
+        'home_team_id': fields.String(),
+    }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._default_response = {
+            'status': 'fail',
+            'message': 'Invalid payload.',
+        }
+
+        self._create_odds_filter_schema = CreateOddsFilterSchema()
+
+    @use_args(game_filter_params)
+    @json_response
+    def get(self, query_params):
+        return get_games_by(**query_params), 200
+
+    @json_response
+    def post(self):
+        return create_entities([Game(**req) for req in request.get_json()])
+
+
+class GameDetails(Resource):
+
+    @staticmethod
+    @json_response
+    def get(game_id):
+        """Gets a game for a given game ID (this should be made less janky in the future)
+
+        :param game_id: Game ID corresponding to the game
+        :return: JSON response containing the game, and a status code
+        """
+        return get_odds_by(game_id=game_id)['data'][0], 200

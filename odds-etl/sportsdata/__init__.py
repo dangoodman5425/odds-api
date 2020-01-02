@@ -52,3 +52,14 @@ class SportsDataClient:
         endpoint = 'PlayerPropsByDate'
         return self._make_request(
             f'{self._base_url}/{self._version}/{sport}/odds/{self._content_type}/{endpoint}/{date}')
+
+    def games_by_date(self, sport, date):
+        """ Returns a JSON of all games for a given date and sport
+
+        :param sport: sport e.g. nba, nfl, nhl
+        :param date: in YYYY-MM-DD format
+        :return: JSON of pregame odds
+        """
+        endpoint = 'GamesByDate'
+        return self._make_request(
+            f'{self._base_url}/{self._version}/{sport}/scores/{self._content_type}/{endpoint}/{date}')

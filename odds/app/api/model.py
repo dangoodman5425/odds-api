@@ -1,3 +1,4 @@
+import datetime
 import uuid
 
 from sqlalchemy import func, ForeignKey
@@ -57,4 +58,32 @@ class OddsFilter(db.Model):
             'odds_uuid': self.odds_uuid,
             'filter_type': self.filter_type,
             'filter_name': self.filter_name,
+        }
+
+
+class Game(db.Model):
+    ___tablename__ = 'game'
+    game_id = db.Column(db.Integer, primary_key=True)
+    home_team_id = db.Column(db.Integer, nullable=False)
+    away_team_id = db.Column(db.Integer, nullable=False)
+    home_team_nickname = db.Column(db.String(128), nullable=False)
+    away_team_nickname = db.Column(db.String(128), nullable=False)
+    game_time = db.Column(db.DateTime, nullable=False)
+
+    def __init__(self, game_id, home_team_id, away_team_id, home_team_nickname, away_team_nickname, game_time):
+        self.game_id = game_id
+        self.home_team_id = home_team_id
+        self.away_team_id = away_team_id
+        self.home_team_nickname = home_team_nickname
+        self.away_team_nickname = away_team_nickname
+        self.game_time = datetime.datetime.strptime(game_time, '%Y-%m-%dT%H:%M:%S')
+
+    def to_dict(self):
+        return {
+            'game_id': self.game_id,
+            'home_team_id': self.home_team_id,
+            'away_team_id': self.away_team_id,
+            'home_team_nickname': self.home_team_nickname,
+            'away_team_nickname': self.away_team_nickname,
+            'game_time': self.game_time,
         }
