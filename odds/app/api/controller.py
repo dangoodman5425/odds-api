@@ -4,7 +4,7 @@ from webargs import fields
 from webargs.flaskparser import use_args
 
 from app.api.model import Odds, OddsFilter, Game
-from app.api.service import get_odds_by, get_odds_filter_by, get_games_by
+from app.api.service import get_odds_by, get_odds_filter_by, get_games_by, get_odds_by_uuid
 from app.api.support import json_response, create_entity, update_entity, create_entities
 from app.api.validation import CreateOddsSchema, UpdateOddsSchema, CreateOddsFilterSchema
 
@@ -25,7 +25,6 @@ class OddsList(Resource):
         'sport': fields.String(),
         'per_page': fields.Integer(),
         'page': fields.Integer(),
-        'filter_type': fields.String(),
         'filter_name': fields.String(),
         'active': fields.Boolean(),
     }
@@ -72,7 +71,7 @@ class OddsDetails(Resource):
         :param odds_uuid: Odds UUID corresponding to the odds
         :return: JSON response containing the odds, and a status code
         """
-        return get_odds_by(odds_uuid=odds_uuid)['data'][0], 200
+        return get_odds_by_uuid(odds_uuid=odds_uuid), 200
 
     @json_response
     def put(self, odds_uuid):
@@ -145,4 +144,4 @@ class GameDetails(Resource):
         :param game_id: Game ID corresponding to the game
         :return: JSON response containing the game, and a status code
         """
-        return get_odds_by(game_id=game_id)['data'][0], 200
+        return get_games_by(game_id=game_id)['data'][0], 200

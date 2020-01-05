@@ -38,13 +38,13 @@ class OddsApiClient:
         return self._get(f'{BASE_URL}/odds', params)
 
     def add_odds(self, data):
-        return self._get(f'{BASE_URL}/odds', data)
+        return self._post(f'{BASE_URL}/odds', data)
 
     def get_odds_filters(self, odds_uuid, params=None):
-        return self._get(f'{BASE_URL}/{odds_uuid}/filters', params)
+        return self._get(f'{BASE_URL}/odds/{odds_uuid}/filters', params)
 
     def add_odds_filters(self, odds_uuid, data):
-        return self._get(f'{BASE_URL}/{odds_uuid}/filters', data)
+        return self._post(f'{BASE_URL}/odds/{odds_uuid}/filters', data)
 
     def get_game(self, game_id):
         return self._get(f'{BASE_URL}/games/{game_id}', None)

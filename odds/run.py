@@ -35,7 +35,7 @@ def seed_db():
     db.session.commit()
 
 
-# app.run(port=5002)
+app.run(port=5002)
 
 
 if __name__ == '__main__':

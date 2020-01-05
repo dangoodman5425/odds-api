@@ -15,4 +15,4 @@ api.add_resource(OddsDetails, f'/{VERSION}/odds/<odds_uuid>')
 api.add_resource(OddsFilterDetails, f'/{VERSION}/odds/<odds_uuid>/filters')
 
 api.add_resource(Games, f'/{VERSION}/games')
-api.add_resource(GameDetails, f'/{VERSION}/games/<games_id>')
+api.add_resource(GameDetails, f'/{VERSION}/games/<game_id>')

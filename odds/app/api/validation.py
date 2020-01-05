@@ -8,6 +8,7 @@ class CreateOddsSchema(Schema):
     odds_name = fields.Str(required=True)
     odds_type = fields.Str(required=True)
     snippet = fields.Str(required=True)
+    image_uuid = fields.Str()
 
 
 class UpdateOddsSchema(Schema):

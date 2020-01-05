@@ -4,6 +4,7 @@ from requests.adapters import HTTPAdapter
 from urllib3 import Retry
 
 BASE_URL = 'https://api.sportsdata.io'
+API_KEY = '1121ae7cdf09443bb29a35ef3d1e80fa'
 
 
 class SportsDataClient:
